@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
-  * _handle_exit - ...
-  * @user_token: ...
-  * @input_line: ...
-  * Return: Nothing to returns
+  * _end_program - this function terminate the shell program
+  * @user_token: the tokens entred by the user
+  * @input_line: what the line the user entered
+  * Return: it does not return anything
   */
 void _end_program(char **user_token, char *input_line)
 {
