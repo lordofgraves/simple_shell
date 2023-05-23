@@ -1,7 +1,5 @@
 #include "shell.h"
 
-
-
 /**
   * _strlen - this function counts the length of a string
   * @s: it hold the string to be counted
@@ -10,12 +8,16 @@
   */
 int _strlen(const char *s)
 {
-        int x = 0;
+	int x = 0;
 
-        while (s[x])
-                x++;
+	if (s != NULL)
+	{
+		for (x = 0; s[x] != '\0'; x++)
+		{
+		}
+	}
 
-        return (x);
+	return (x);
 }
 
 /**
@@ -27,54 +29,49 @@ int _strlen(const char *s)
   */
 int _strcmp(char *s1, char *s2)
 {
-    int s1_len = 0, s2_len = 0;
-    int difference = 0, limit = 0;
-    int index = 0;
+	int s1_len = 0, s2_len = 0;
+	int difference = 0, limit = 0;
+	int index = 0;
 
-    s1_len = _strlen(s1);
-    s2_len = _strlen(s2);
+	s1_len = _strlen(s1);
+	s2_len = _strlen(s2);
 
-    if (s1_len <= s2_len)
-        limit = s1_len;
-    else
-        limit = s2_len;
+	limit = (s1_len <= s2_len) ? s1_len : s2_len;
 
-    for (; index <= limit; index++)
-    {
-        if (s1[index] == s2[index])
-            continue;
+	while (index <= limit && s1[index] == s2[index])
+	{
+		index++;
+	}
+	difference = (index <= limit) ? (s1[index] - s2[index]) : 0;
 
-        difference = s1[index] - s2[index];
-        break;
-    }
-
-    return difference;
+	return (difference);
 }
 
 /**
   * _strcat - this function gather two strings
-  * @dest: a pointer string destination 
+  * @dest: a pointer string destination
   * @src: a pointer to source of string
   * Return: A pointer to the resulting string
   */
 char *_strcat(char *dest, char *src)
 {
-    int dest_len = 0;
-    int x = 0;
+	int dest_len = 0;
+	int x = 0;
 
-    while (dest[dest_len])
-        dest_len++;
+	while (dest[dest_len])
+		dest_len++;
 
-    x = 0;
-    while (src[x] != '\0')
-    {
-        dest[dest_len] = src[x];
-        dest_len++;
-        x++;
-    }
+	x = 0;
+	while (src[x] != '\0')
+	{
+		dest[dest_len] = src[x];
+		dest_len++;
+		x++;
+	}
 
-    dest[dest_len] = '\0';
-    return (dest);
+	dest[dest_len] = '\0';
+
+	return (dest);
 }
 
 /**
