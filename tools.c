@@ -42,7 +42,8 @@ int _atoi(char *s)
   *
   * Return: a pointer to the resized memory block
   */
-void *_reallocation(void *ptr, unsigned int prev_size, unsigned int updated_size)
+void *_reallocation(void *ptr, unsigned int prev_size,
+		unsigned int updated_size)
 {
 	unsigned int x = 0;
 	char *new_ptr;
@@ -71,13 +72,11 @@ void *_reallocation(void *ptr, unsigned int prev_size, unsigned int updated_size
 
 	if (new_ptr == NULL)
 		return (NULL);
-
 	while (x < prev_size && x < updated_size)
-    {
-        new_ptr[x] = ((char *) ptr)[x];
-        x++;
-    }
-
+	{
+		new_ptr[x] = ((char *) ptr)[x];
+		x++;
+	}
 	free(ptr);
 	return (new_ptr);
 }
