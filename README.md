@@ -1,6 +1,5 @@
 # Simple Shell Project
 Creating a simple Unix command line interpreter.
-![picture alt](http://via.placeholder.com/200x150 "SIMPLE_SHELL")
 ![picture alt](https://github.com/BoubkerElmaayouf/shell_test/blob/master/The%20_Gates_Of_Shell.jpeg?raw=true "SIMPLE_SHELL")
 
 ALX SE COHORT 13 //2023
