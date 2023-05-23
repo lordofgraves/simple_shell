@@ -13,6 +13,7 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <signal.h>
 
 #define BUFFER_SIZE 4096
 
