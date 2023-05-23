@@ -41,7 +41,6 @@ void process_input(char *input_line, int inputLength)
 }
 /**
  * main - this function work as link between the user and the shell program.
- *
  * Return: 0
  */
 int main(void)
