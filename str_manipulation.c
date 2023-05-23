@@ -11,10 +11,8 @@ int _strlen(const char *s)
 	int x = 0;
 
 	while (s[x])
-	{
 		x++;
-	}
-
+	
 	return (x);
 }
 
@@ -60,9 +58,7 @@ char *_strcat(char *dest, char *src)
 	int x = 0;
 
 	while (dest[dest_len])
-	{
 		dest_len++;
-	}
 
 	x = 0;
 	while (src[x] != '\0')
@@ -131,21 +127,15 @@ char *_strdup(char *str)
 	int x = 0;
 
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 
 	length = _strlen(str);
 	new_str = malloc((sizeof(char) * length) + 1);
 	if (new_str == NULL)
-	{
 		return (NULL);
-	}
 
 	for (; x < length; x++)
-	{
 		new_str[x] = str[x];
-	}
 
 	new_str[length] = '\0';
 	return (new_str);
