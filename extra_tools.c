@@ -2,7 +2,7 @@
 
 /**
  * _putchar - this function write to stdout
- * @chr: the character that will be printed
+ * @chr: The character to print
  *
  * Return: On success 1 and -1 on error
  */
@@ -13,24 +13,22 @@ int _putchar(char chr)
 
 /**
   * _printf - this function Prints a string
-  * @s: contain what will be printed
+  * @s: The string to print
   *
   * Return: Nothing
   */
 void _printf(char *s)
 {
 	int x = 0;
-
-	for (; s[x] != '\0'; x++)
-	{
-		_putchar(s[x]);
-	}
-	_putchar('\n');
+    for (; s[x] != '\0'; x++)
+    {
+        _putchar(s[x]);
+    }
+    _putchar('\n');
 }
 
 /**
-  * _strn_cmp - this function Compares the first n bytes
-  * of string 1 and string 2
+  * _strn_cmp - this function Compares at most the first n bytes of string 1 and string 2
   * @string1: string
   * @string2: string
   * @_length: The limit of bytes for comparison
@@ -45,9 +43,9 @@ int _strn_cmp(const char *string1, const char *string2, size_t _length)
 	{
 		if (string1[current_pos] != string2[current_pos])
 		{
-			return (string1[current_pos] - string2[current_pos]);
+			return string1[current_pos] - string2[current_pos];
 		}
 	}
 
-	return (0);
+	return 0;
 }

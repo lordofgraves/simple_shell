@@ -9,21 +9,21 @@
   */
 int symbols_counter(char *text, char *symbols)
 {
-	int x = 0;
-	int y = 0;
-	int symbol_count = 0;
+        int x = 0;
+        int y = 0;
+        int symbol_count = 0;
 
-	for (; symbols[x]; x++)
-	{
-		for (y = 0; text[y]; y++)
-		{
-			if (text[y] == symbols[x])
-			{
-				symbol_count++;
-			}
-		}
-	}
-	return (symbol_count);
+    for (; symbols[x]; x++)
+    {
+        for (y = 0; text[y]; y++)
+        {
+            if (text[y] == symbols[x])
+            {
+                symbol_count++;
+            }
+        }
+    }
+    return (symbol_count);
 }
 
 /**
@@ -34,22 +34,23 @@ int symbols_counter(char *text, char *symbols)
   */
 int words_counter(char *new_str)
 {
-	int word_count = 0;
-	int stat = 0;
-	int x;
+    int word_count = 0;
+    int stat = 0;
+    int x;
 
-	for (x = 0; new_str[x] != '\0'; x++)
-	{
-		if (new_str[x] == '\n' || new_str[x] == ' ' || new_str[x] == '\t')
-		{
-			stat = 0;
-		}
-		else if (stat == 0)
-		{
-			stat = 1;
-			word_count++;
-		}
-	}
+    for (x = 0; new_str[x] != '\0'; x++)
+    {
+        if (new_str[x] == '\n' || new_str[x] == ' ' || new_str[x] == '\t')
+        {
+            stat = 0;
+        }
+        else if (stat == 0)
+        {
+            stat = 1;
+            word_count++;
+        }
+    }
 
-	return (word_count);
+    return (word_count);
 }
+

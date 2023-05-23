@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
-  * _end_program - this function will exit the shell
-  * when the command 'exit' is used.
-  * @user_token: the command token.
-  * @input_line: the input line.
-  * Return: Nothing.
+  * _handle_exit - ...
+  * @user_token: ...
+  * @input_line: ...
+  * Return: Nothing to returns
   */
 void _end_program(char **user_token, char *input_line)
 {
@@ -36,3 +35,4 @@ void _end_program(char **user_token, char *input_line)
 	free(input_line);
 	exit(EXIT_SUCCESS);
 }
+

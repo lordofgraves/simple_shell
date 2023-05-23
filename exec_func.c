@@ -80,25 +80,23 @@ char *find_cmd(char *cmd_name)
   */
 int _execve(char *command_name, char **arg)
 {
-	pid_t pid;
-	int stat;
+    pid_t pid;
+    int stat;
 
-	pid = fork();
-	if (pid == -1)
-	{
-		perror("fork failed");
-		return (-1);
-	}
-	else if (pid == 0)
-	{
-		execve(command_name, arg, _environ);
-	}
-	else
-	{
-		do {
-			waitpid(pid, &stat, WUNTRACED);
-		} while (WIFEXITED(stat) == 0 && WIFSIGNALED(stat) == 0);
-	}
-	return (0);
+    pid = fork();
+    if (pid == -1) {
+        perror("fork failed");
+        return (-1);
+    }
+    else if (pid == 0)
+    {
+        execve(command_name, arg, _environ);
+    }
+    else {
+        do {
+            waitpid(pid, &stat, WUNTRACED);
+        } while (WIFEXITED(stat) == 0 && WIFSIGNALED(stat) == 0);
+    }
+    return (0);
 }
 

@@ -35,22 +35,21 @@ int _atoi(char *s)
 }
 
 /**
-  * _reallocation - this function resizes the memory
-  * block previously allocated
+  * _reallocation - this function resizes the memory block previously allocated
   * @ptr: pointer to the memory block allocated before
   * @prev_size: the previous size
   * @updated_size: the updated size
   *
   * Return: a pointer to the resized memory block
   */
-void *_reallocation(void *ptr, unsigned int prev_size,
-		unsigned int updated_size)
+void *_reallocation(void *ptr, unsigned int prev_size, unsigned int updated_size)
 {
 	unsigned int x = 0;
 	char *new_ptr;
 
 	if (updated_size == prev_size)
 		return (ptr);
+
 	if (ptr == NULL)
 	{
 		new_ptr = malloc(updated_size);
@@ -72,14 +71,14 @@ void *_reallocation(void *ptr, unsigned int prev_size,
 
 	if (new_ptr == NULL)
 		return (NULL);
+
 	while (x < prev_size && x < updated_size)
-	{
-		new_ptr[x] = ((char *) ptr)[x];
-		x++;
-	}
+    {
+        new_ptr[x] = ((char *) ptr)[x];
+        x++;
+    }
 
 	free(ptr);
 	return (new_ptr);
 }
-
 
