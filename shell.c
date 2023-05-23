@@ -9,7 +9,7 @@
 void print_prompt(void)
 {
 	if (isatty(STDIN_FILENO))
-		write(STDOUT_FILENO, "Dude$  ", 6);
+		write(STDOUT_FILENO, "GOS$  ", 5);
 }
 
 /**
