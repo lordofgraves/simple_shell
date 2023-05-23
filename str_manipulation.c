@@ -29,24 +29,21 @@ int _strcmp(char *s1, char *s2)
 	int s1_len = 0, s2_len = 0;
 	int difference = 0, limit = 0;
 	int index = 0;
-
+	
 	s1_len = _strlen(s1);
 	s2_len = _strlen(s2);
-
-	limit = (s1_len <= s2_len) ? s1_len : s2_len;
-
-	while (index <= limit)
+	
+	if (s1_len <= s2_len)
+		limit = s1_len;
+	else
+		limit = s2_len;
+	for (; index <= limit; index++)
 	{
 		if (s1[index] == s2[index])
-		{
-			index++;
 			continue;
-		}
-
 		difference = s1[index] - s2[index];
 		break;
 	}
-
 	return (difference);
 }
 
