@@ -18,7 +18,6 @@ char *path_concatination(char *n_path, char *n_prog)
 	n_path = _reallocation(n_path, (path_length + 1), new_size);
 	if (!n_path)
 		return (NULL);
-
 	_strcat(n_path, "/");
 	_strcat(n_path, n_prog);
 
@@ -80,23 +79,25 @@ char *find_cmd(char *cmd_name)
   */
 int _execve(char *command_name, char **arg)
 {
-    pid_t pid;
-    int stat;
+	pid_t pid;
+	int stat;
 
-    pid = fork();
-    if (pid == -1) {
-        perror("fork failed");
-        return (-1);
-    }
-    else if (pid == 0)
-    {
-        execve(command_name, arg, _environ);
-    }
-    else {
-        do {
-            waitpid(pid, &stat, WUNTRACED);
-        } while (WIFEXITED(stat) == 0 && WIFSIGNALED(stat) == 0);
-    }
-    return (0);
+	pid = fork();
+	if (pid == -1)
+	{
+		perror("fork failed");
+		return (-1);
+	}
+	else if (pid == 0)
+	{
+		execve(command_name, arg, _environ);
+	}
+	else
+	{
+		do {
+			waitpid(pid, &stat, WUNTRACED);
+		} while (WIFEXITED(stat) == 0 && WIFSIGNALED(stat) == 0);
+	}
+	return (0);
 }
 
