@@ -16,9 +16,7 @@ char *_get_env(const char *var_name)
 		{
 			envValue = _strdup(_environ[x]);
 			while (*envValue != '=')
-			{
 				envValue++;
-			}
 			++envValue;
 			return (envValue);
 		}

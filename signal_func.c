@@ -8,13 +8,8 @@
   */
 void signal_func(int sig_num)
 {
-	switch (sig_num)
+	if (sig_num == SIGINT)
 	{
-		case SIGINT:
-			write(STDOUT_FILENO, "\n$ ", 3);
-			break;
-
-		default:
-			break;
+		write(STDOUT_FILENO, "\n$ ", 3);
 	}
 }

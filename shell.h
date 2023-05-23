@@ -13,7 +13,6 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <signal.h>
 
 #define BUFFER_SIZE 4096
 
@@ -67,8 +66,7 @@ void signal_func(int sig_num);
 
 /* ====== tools.c =======*/
 int _atoi(char *nptr);
-void *_reallocation(void *ptr, unsigned int prev_size,
-		unsigned int updated_size);
+void *_reallocation(void *ptr, unsigned int prev_size, unsigned int updated_size);
 
 /* ====== _tokenizer.c=======*/
 char **tokenizing(char *string, char *delim, int length);
