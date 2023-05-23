@@ -5,7 +5,7 @@
   * for the environment path.
   * @environ_path: pointer to the environment path.
   *
-  * Return: Nothing 
+  * Return: Nothing
   */
 void free_genv(char *environ_path)
 {
@@ -18,11 +18,11 @@ void free_genv(char *environ_path)
 }
 
 /**
-  * frees_tokens - this function frees the memory
+  * frees_tkns - this function frees the memory
   * allocated of an array of tokens
   * @tokens: it's a double pointer to the array
   *
-  * Return: Nothing 
+  * Return: Nothing
   */
 void free_tkns(char **tokens)
 {
