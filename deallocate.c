@@ -18,7 +18,7 @@ void free_genv(char *environ_path)
 }
 
 /**
-  * frees_tkns - this function frees the memory
+  * free_tkns - this function frees the memory
   * allocated of an array of tokens
   * @tokens: it's a double pointer to the array
   *
